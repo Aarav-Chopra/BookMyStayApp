@@ -1,33 +1,87 @@
 /**
- * UseCase1BookMyStayApp
+ * BookMyStayApp
  * 
- * This class represents the entry point of the Book My Stay Application.
- * It demonstrates the basic structure of a Java application, including the
- * main() method and console output.
- * 
- * The application prints a welcome message along with the system name and version.
+ * This class demonstrates Use Case 2: Basic Room Types & Static Availability.
+ * It introduces abstraction, inheritance, and polymorphism using different room types.
  * 
  * @author Aarav
- * @version 1.0
+ * @version 2.1
  */
+
+// Abstract class
+abstract class Room {
+    private String roomType;
+    private int beds;
+    private double price;
+
+    // Constructor
+    public Room(String roomType, int beds, double price) {
+        this.roomType = roomType;
+        this.beds = beds;
+        this.price = price;
+    }
+
+    // Method to display room details
+    public void displayDetails() {
+        System.out.println("Room Type : " + roomType);
+        System.out.println("Beds      : " + beds);
+        System.out.println("Price     : ₹" + price);
+    }
+}
+
+// Single Room class
+class SingleRoom extends Room {
+    public SingleRoom() {
+        super("Single Room", 1, 2000);
+    }
+}
+
+// Double Room class
+class DoubleRoom extends Room {
+    public DoubleRoom() {
+        super("Double Room", 2, 3500);
+    }
+}
+
+// Suite Room class
+class SuiteRoom extends Room {
+    public SuiteRoom() {
+        super("Suite Room", 3, 6000);
+    }
+}
+
+// Main Application Class
 public class BookMyStayApp {
 
-    /**
-     * Main method - Entry point of the application
-     * 
-     * @param args Command-line arguments (not used here)
-     */
     public static void main(String[] args) {
 
-        // Welcome message
         System.out.println("=======================================");
         System.out.println("   Welcome to Book My Stay App");
-        System.out.println("   Hotel Booking System v1.0");
-        System.out.println("=======================================");
-        
-        // Additional info message
-        System.out.println("Your comfort, our priority!");
-        
-        // Application ends
+        System.out.println("   Hotel Booking System v2.1");
+        System.out.println("=======================================\n");
+
+        // Creating room objects (Polymorphism)
+        Room single = new SingleRoom();
+        Room doubleRoom = new DoubleRoom();
+        Room suite = new SuiteRoom();
+
+        // Static availability variables
+        int singleAvailable = 5;
+        int doubleAvailable = 3;
+        int suiteAvailable = 2;
+
+        // Display details
+        System.out.println("---- Room Details & Availability ----\n");
+
+        single.displayDetails();
+        System.out.println("Available : " + singleAvailable + "\n");
+
+        doubleRoom.displayDetails();
+        System.out.println("Available : " + doubleAvailable + "\n");
+
+        suite.displayDetails();
+        System.out.println("Available : " + suiteAvailable + "\n");
+
+        System.out.println("Thank you for using Book My Stay App!");
     }
 }
