@@ -1,0 +1,33 @@
+/**
+ * UseCase1BookMyStayApp
+ * 
+ * This class represents the entry point of the Book My Stay Application.
+ * It demonstrates the basic structure of a Java application, including the
+ * main() method and console output.
+ * 
+ * The application prints a welcome message along with the system name and version.
+ * 
+ * @author Aarav
+ * @version 1.0
+ */
+public class BookMyStayApp {
+
+    /**
+     * Main method - Entry point of the application
+     * 
+     * @param args Command-line arguments (not used here)
+     */
+    public static void main(String[] args) {
+
+        // Welcome message
+        System.out.println("=======================================");
+        System.out.println("   Welcome to Book My Stay App");
+        System.out.println("   Hotel Booking System v1.0");
+        System.out.println("=======================================");
+        
+        // Additional info message
+        System.out.println("Your comfort, our priority!");
+        
+        // Application ends
+    }
+}
